@@ -1,0 +1,26 @@
+set -gx EDITOR nano
+set -gx GPG_TTY (tty)
+
+{{- if lookPath "/home/linuxbrew/.linuxbrew/bin/brew" }}
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
+{{- end }}
+
+if type -q direnv
+    direnv hook fish | source
+end
+
+if type -q thefuck
+    thefuck --alias | source
+end
+
+if type -q starship
+    starship init fish | source
+end
+
+if type -q zoxide
+    zoxide init fish | source
+end
+

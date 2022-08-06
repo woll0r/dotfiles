@@ -1,0 +1,50 @@
+
+# This is Git's per-user configuration file.
+[user]
+name = Wolfgang Vandevenne
+email = woll0r@gmail.com
+signingkey = 69B7868093023FE3
+
+[push]
+default = tracking
+
+[apply]
+whitespace = fix
+
+[color]
+ui = auto
+
+[merge]
+defaulttoupstream = true
+
+[alias]
+incoming = "!git remote update -p; git log --pretty=oneline --abbrev-commit --abbrev=8 ..@{u}"
+outgoing = "log --pretty=oneline --abbrev-commit --abbrev=8 @{u}.."
+co = checkout
+st = status
+sl = log --pretty=oneline --abbrev-commit --abbrev=8
+sm = submodule
+smu = submodule update --init
+up = remote update
+glog = log --graph --abbrev-commit --decorate --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %C(cyan)%ce%Creset %C(green)(%cr)%Creset' --date=relative
+
+[diff]
+renames = true
+
+[git-p4]
+skipsubmitedit = true
+
+[url "git@github.com:"]
+pushinsteadof = git://github.com/
+pushinsteadof = https://github.com/
+
+[url "git@gitlab.com:"]
+pushinsteadof = git://gitlab.com/
+pushinsteadof = https://gitlab.com/
+
+[commit]
+gpgsign = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
