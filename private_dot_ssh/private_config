@@ -2,7 +2,8 @@ VerifyHostKeyDNS yes
 
 Host github.com
     Hostname ssh.github.com
-    Port 443
+    Port 22
+    User git
 
 Host ssh.cardboardbox.be
   ProxyCommand bash -c '/home/linuxbrew/.linuxbrew/bin/cloudflared access ssh-gen --hostname %h; ssh -tt %r@cfpipe-ssh.cardboardbox.be >&2 <&1'
