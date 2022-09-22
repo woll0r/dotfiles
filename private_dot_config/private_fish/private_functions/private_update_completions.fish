@@ -14,4 +14,7 @@ function update_completions --description 'Update shell completions'
     if type -q kubectl
         kubectl completion fish > ~/.config/fish/completions/kubectl.fish
     end
+    if type -q talosctl
+        talosctl completion fish > ~/.config/fish/completions/talosctl.fish
+    end
 end
