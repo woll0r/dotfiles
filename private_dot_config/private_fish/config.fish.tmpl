@@ -16,6 +16,10 @@ if test -d (brew --prefix)"/share/fish/vendor_completions.d"
 end
 {{- end }}
 
+if test -d {{ .chezmoi.homeDir }}/.local/bin
+    fish_add_path {{ .chezmoi.homeDir }}/.local/bin
+end
+
 {{- if lookPath "aqua" }}
 set -gx AQUA_CONFIG {{ .chezmoi.homeDir }}/.config/aqua/aqua.yaml
 set -gx AQUA_GLOBAL_CONFIG {{ .chezmoi.homeDir }}/.config/aqua/aqua.yaml
