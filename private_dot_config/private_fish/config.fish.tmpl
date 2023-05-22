@@ -42,3 +42,7 @@ end
 if type -q cargo
     fish_add_path {{ .chezmoi.homeDir }}/.cargo/bin
 end
+
+if type -q kubectl-krew
+    fish_add_path {{ .chezmoi.homeDir }}/.krew/bin
+end
