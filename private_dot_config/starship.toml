@@ -26,7 +26,7 @@ style = "bold yellow"
 format = "[$path]($style)[$read_only]($read_only_style) "
 
 [hostname]
-ssh_only = false
+ssh_only = true
 format = "@[$hostname]($style) "
 style = "bold bright-green"
 
@@ -35,7 +35,7 @@ style = "bold bright-green"
 disabled = true
 
 [username]
-show_always = true
+show_always = false
 style_user = "bright-blue bold"
 format = '[$user]($style)'
 
