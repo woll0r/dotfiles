@@ -4,14 +4,15 @@ name = Wolfgang Vandevenne
 email = woll0r@gmail.com
 signingkey = 69B7868093023FE3
 
-{{ if (or (eq .chezmoi.os "windows") (and (eq .chezmoi.os "linux") (.codespaces))) }}
+{{- if (or (eq .chezmoi.os "windows") (and (eq .chezmoi.os "linux") (.codespaces))) }}
 [core]
 autocrlf = false
 eol = lf
-
+{{- end }}
+{{- if eq .chezmoi.os "windows" }}
 [gpg]
 program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
-{{ end }}
+{{- end }}
 
 [push]
 default = tracking
