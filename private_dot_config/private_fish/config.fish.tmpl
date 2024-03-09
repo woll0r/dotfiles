@@ -20,13 +20,6 @@ if test -d {{ .chezmoi.homeDir }}/.local/bin
     fish_add_path {{ .chezmoi.homeDir }}/.local/bin
 end
 
-{{- if lookPath "aqua" }}
-set -gx AQUA_CONFIG {{ .chezmoi.homeDir }}/.config/aqua/aqua.yaml
-set -gx AQUA_GLOBAL_CONFIG {{ .chezmoi.homeDir }}/.config/aqua/aqua.yaml
-set -gx AQUA_ROOT_DIR {{ .chezmoi.homeDir }}/.local/share/aqua
-fish_add_path $AQUA_ROOT_DIR/bin
-{{- end }}
-
 if type -q direnv
     direnv hook fish | source
 end
