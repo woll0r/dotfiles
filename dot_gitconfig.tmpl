@@ -1,9 +1,17 @@
-
 # This is Git's per-user configuration file.
 [user]
 name = Wolfgang Vandevenne
 email = woll0r@gmail.com
 signingkey = 69B7868093023FE3
+
+{{ if (or (eq .chezmoi.os "windows") (and (eq .chezmoi.os "linux") (.codespaces))) }}
+[core]
+autocrlf = false
+eol = lf
+
+[gpg]
+program = C:\Program Files (x86)\GnuPG\bin\gpg.exe
+{{ end }}
 
 [push]
 default = tracking
@@ -44,7 +52,9 @@ pushinsteadof = https://gitlab.com/
 
 [commit]
 gpgsign = true
+
 [pull]
-	rebase = false
+rebase = false
+
 [init]
-	defaultBranch = main
+defaultBranch = main
