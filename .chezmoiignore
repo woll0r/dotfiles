@@ -2,7 +2,9 @@ install.sh
 k9s
 {{ if ne .chezmoi.os "linux" }}
 .config/*
-run_once_*
+!.config/starship.toml
+.nanorc
+.screenrc
 {{ end }}
 {{ if ne .chezmoi.os "windows" }}
 AppData

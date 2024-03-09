@@ -1,3 +1,4 @@
+{{- if ne chezmoi.os "windows" -}}
 #!{{ lookPath "fish" }}
 
 type fisher &>/dev/null || curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
@@ -12,3 +13,4 @@ fisher install nickeb96/puffer-fish
 fisher install patrickf3139/fzf.fish
 fisher install wfxr/forgit
 
+{{- end -}}
