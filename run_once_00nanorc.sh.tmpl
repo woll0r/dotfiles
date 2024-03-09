@@ -1,7 +1,8 @@
+{{- if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
 #!{{ lookPath "bash" }}
 
 # Install syntax highlighting for Nano
 if [ ! -d ~/.nano ]; then
     git clone https://github.com/scopatz/nanorc.git ~/.nano
 fi
-
+{{- end -}}
