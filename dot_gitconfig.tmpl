@@ -61,5 +61,5 @@ defaultBranch = main
 
 {{- if (.codespaces) }}
 [safe]
-directory = {{ .env "WORKSPACE" }}
+directory = {{ env "WORKSPACE" }}
 {{- end }}
