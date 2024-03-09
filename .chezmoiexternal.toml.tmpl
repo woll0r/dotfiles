@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "linux" }}
 [".config/k9s/skins"]
 {{- else if eq .chezmoi.os "windows" }}
-["AppData/k9s/skins"]
+["AppData/Local/k9s/skins"]
 {{- end }}
     type = "archive"
     url = "https://github.com/catppuccin/k9s/archive/master.tar.gz"
