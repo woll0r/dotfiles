@@ -1,1 +1,9 @@
 install.sh
+k9s
+{{ if ne .chezmoi.os "linux" }}
+.config/*
+run_once_*
+{{ end }}
+{{ if ne .chezmoi.os "windows" }}
+AppData
+{{ end }}

@@ -1,6 +1,10 @@
 k9s:
   liveViewAutoRefresh: false
-  screenDumpDir: /home/wolfgang/.local/state/k9s/screen-dumps
+  {{- if eq .chezmoi.os "linux" }}
+  screenDumpDir: {{ .chezmoi.homeDir }}/.local/state/k9s/screen-dumps
+  {{- else if eq .chezmoi.os "windows" }}
+  screenDumpDir: {{ .chezmoi.homeDir }}\AppData\Local\Temp\k9s-screens
+  {{- end }}
   refreshRate: 2
   maxConnRetry: 5
   readOnly: false
