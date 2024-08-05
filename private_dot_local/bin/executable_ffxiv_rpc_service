@@ -69,7 +69,7 @@ if (
 		# You should be able to launch the game afterwards.
 
 		# Is wine version managed by xivlauncher?
-		wine_type=$(grep -F WineStartupType "$_launcher_ini" | cut -d '=' -f 2)
+		wine_type=$(grep -F WineType "$_launcher_ini" | cut -d '=' -f 2)
 		if [[ -z $wine_type ]]; then
 			echo >&2 "Error: Parsing XLCore config has failed"
 			exit 4
