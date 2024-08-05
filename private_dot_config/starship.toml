@@ -8,35 +8,36 @@ $kubernetes\
 $git_branch\
 $git_state\
 $git_status\
-[](fg:subtext0)
+$cmd_duration\
+[](fg:prev_bg)
 $character\
   """
 
 palette = 'catppuccin_mocha'
 
 [character]
-success_symbol = "[  ](bold fg:green)"
+success_symbol = "[ ❯ ](bold fg:green)"
 error_symbol = "[  ](bold fg:red)"
-format = "[$symbol ❯ ](fg:subtext0)"
+format = "[$symbol](fg:subtext0)"
 
 [cmd_duration]
-min_time = 500
-style = "bg:red fg:base bold"
-format = "[ $duration ]($style)"
+min_time = 3000
+style = "fg:base bg:red"
+format = "[](fg:red bg:prev_bg)[  $duration ]($style)"
 
 [directory]
 truncation_length = 5
 truncate_to_repo = true
 read_only = ""
-style = "fg:base bg:subtext0"
-read_only_style = "fg:red bg:subtext0"
-format = "[](fg:yellow bg:subtext0)[  ](bg:yellow fg:base)[](bg:subtext0 fg:yellow)[ $path]($style)[$read_only ]($read_only_style)"
+style = "fg:base bg:prev_bg"
+read_only_style = "fg:red bg:prev_bg"
+format = "[](fg:yellow bg:prev_bg)[  ](bg:yellow fg:base)[ $path]($style)[$read_only ]($read_only_style)"
 
 [hostname]
 ssh_symbol = "󰛳"
 ssh_only = true
-format = "[](fg:lavender bg:subtext0)[ $ssh_symbol ](bg:lavender fg:base)[](bg:subtext0 fg:lavender)[ $hostname ]($style)"
-style = "bg:subtext0 fg:base"
+format = "[](fg:lavender bg:prev_bg)[ $ssh_symbol $hostname ]($style)"
+style = "bg:lavender fg:base"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -44,23 +45,23 @@ disabled = true
 
 [username]
 show_always = true
-style_user = "bg:subtext0 fg:base"
-style_root = "bg:subtext0 fg:base bold"
-format = '[](fg:sapphire)[  ](bg:sapphire fg:base)[](bg:subtext0 fg:sapphire)[ $user ]($style)'
+style_user = "bg:sapphire fg:base"
+style_root = "bg:sapphire fg:base bold"
+format = '[](fg:sapphire)[  $user ]($style)'
 
 [kubernetes]
 symbol = "󱃾"
-style = "fg:base bg:subtext0"
-format = '[](fg:blue bg:subtext0)[ $symbol ](bg:blue fg:base)[](bg:subtext0 fg:blue)[ $context \($namespace\) ]($style)'
+style = "fg:base bg:blue"
+format = '[](fg:blue bg:prev_bg)[ $symbol $context \($namespace\) ]($style)'
 disabled = false
 
 [git_branch]
 symbol = ""
-style = "fg:base bg:subtext0"
-format = '[](fg:sky bg:subtext0)[ $symbol ](bg:sky fg:base)[](bg:subtext0 fg:sky)[ $branch ]($style)'
+style = "fg:base bg:sky"
+format = '[](fg:sky bg:prev_bg)[ $symbol $branch ]($style)'
 
 [git_status]
-style = "fg:base bg:subtext0"
+style = "fg:base bg:sky"
 format = '[($all_status$ahead_behind )]($style)'
 
 [palettes.catppuccin_mocha]
