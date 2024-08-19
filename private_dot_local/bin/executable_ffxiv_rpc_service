@@ -76,7 +76,10 @@ if (
 		fi
 		if [[ $wine_type == "Managed" ]]; then
 			# Crude but until XLCore exposes this, it will have to do...
-			wine_binary_path=$(dirname "$(find "$HOME"/.xlcore/compatibilitytool/ -type f -name wine)")
+			wine_version=$(grep -F WineVersion "$_launcher_ini" | cut -d '=' -f 2)
+			echo "Wine version: $wine_version"
+			#wine_binary_path=$(dirname "$(find "$HOME"/.xlcore/compatibilitytool/"$wine_version" -type f -name wine)")
+			wine_binary_path="$HOME/.xlcore/compatibilitytool/wine/$wine_version/bin"
 		else
 			_xlcore_wine_binary_path_setting=$(grep -F WineBinaryPath "$_launcher_ini" | cut -d '=' -f 2)
 			_wine_binary_path="$_xlcore_wine_binary_path_setting"

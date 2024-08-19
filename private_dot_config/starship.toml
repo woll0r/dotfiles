@@ -21,7 +21,7 @@ error_symbol = "[  ](bold fg:red)"
 format = "[$symbol](fg:subtext0)"
 
 [cmd_duration]
-min_time = 3000
+min_time = 60000
 style = "fg:base bg:red"
 format = "[](fg:red bg:prev_bg)[  $duration ]($style)"
 
