@@ -32,10 +32,16 @@
             "format": "{host-name}"
         },
         {
+            "type": "board",
+            "key": "󰪫 ",
+            "keyColor": "green",
+            "format": "{vendor} {name}"
+        },
+        {
             "type": "cpu",
             "key": " ",
             "showPeCoreCount": true,
-            "format": "{1}",
+            "format": "{name}",
             "keyColor": "green"
         },
         {
@@ -46,7 +52,7 @@
         {
             "type": "gpu",
             "key": "󰍛 ",
-            "format": "{3}",
+            "format": "{driver}",
             "keyColor": "green"
         },
         {
