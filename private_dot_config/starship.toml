@@ -4,6 +4,7 @@ format = """\
 $username\
 $hostname\
 $directory\
+$container\
 $kubernetes\
 $git_branch\
 $git_state\
@@ -63,6 +64,10 @@ format = '[](fg:sky bg:prev_bg)[ $symbol $branch ]($style)'
 [git_status]
 style = "fg:base bg:sky"
 format = '[($all_status$ahead_behind )]($style)'
+
+[container]
+style = "fg:base bg:pink"
+format = '[](fg:pink bg:prev_bg)[ $symbol $name ]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
