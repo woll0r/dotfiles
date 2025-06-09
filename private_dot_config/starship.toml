@@ -5,6 +5,7 @@ $username\
 $hostname\
 $directory\
 $container\
+$python\
 $kubernetes\
 $git_branch\
 $git_state\
@@ -68,6 +69,11 @@ format = '[($all_status$ahead_behind )]($style)'
 [container]
 style = "fg:base bg:pink"
 format = '[](fg:pink bg:prev_bg)[ $symbol $name ]($style)'
+
+[python]
+style = "fg:base bg:green"
+symbol = ""
+format = '[](fg:green bg:prev_bg)[ $symbol $virtualenv ]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
