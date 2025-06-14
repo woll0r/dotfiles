@@ -138,6 +138,8 @@ alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed pac
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'          # List amount of -git packages
 alias update='sudo pacman -Syu'
 
+alias mc='mc -u'   # Prevent slow startup of Midnight Commander
+
 # Get fastest mirrors
 alias mirror="sudo cachyos-rate-mirrors"
 
