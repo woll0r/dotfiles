@@ -1,9 +1,0 @@
-[Unit]
-Description=Discord Rich Presence Service for FFXIV
-
-[Service]
-Type=simple
-ExecStart=%h/.local/bin/ffxiv_rpc_service
-
-[Install]
-WantedBy=default.target
