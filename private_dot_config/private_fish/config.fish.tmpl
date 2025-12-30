@@ -3,20 +3,6 @@ function fish_greeting
     fastfetch
 end
 
-# Initialize hooks for some programs
-if type -q direnv
-    direnv hook fish | source
-end
-if type -q thefuck
-    thefuck --alias | source
-end
-if type -q starship
-    starship init fish | source
-end
-if type -q zoxide
-    zoxide init fish | source
-end
-
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
@@ -55,6 +41,23 @@ if type -q cargo
 end
 if type -q kubectl-krew
     fish_add_path {{ .chezmoi.homeDir }}/.krew/bin
+end
+
+# Initialize hooks for some programs
+if type -q direnv
+    direnv hook fish | source
+end
+if type -q thefuck
+    thefuck --alias | source
+end
+if type -q starship
+    starship init fish | source
+end
+if type -q zoxide
+    zoxide init fish | source
+end
+if type -q mise
+    mise activate fish | source
 end
 
 ## Functions
